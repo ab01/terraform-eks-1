@@ -74,6 +74,15 @@ resource "aws_security_group_rule" "workers_ingress_cluster" {
   type                     = "ingress"
 }
 
+resource "aws_security_group_rule" "workers_ingress_clust" {
+  description              = "Allow workers Kubelets and pods to receive communication from the cluster control plane."
+  protocol                 = "tcp"
+  security_group_id        = "${aws_security_group.workers.id}"
+  source_security_group_id = "${aws_security_group.eks.id}"
+  from_port                = 443
+  to_port                  = 443
+  type                     = "ingress"
+}
 resource "aws_security_group_rule" "workers_ingress_ssh" {
   description       = "Allow access from ssh."
   protocol          = "tcp"
