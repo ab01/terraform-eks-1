@@ -47,4 +47,5 @@ variable "config_output_path" {
 variable "key_pair_name" {
   description = "SSH key pair for instance access"
   type        = "string"
+  default     = "helm-kubernetes-tf"
 }

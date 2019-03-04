@@ -18,10 +18,10 @@ set -e # Exit on error
 
 terraform init \
 -backend=true \
--backend-config="bucket=helm-eks-tf-remote" \
--backend-config="dynamodb_table=terraform-state-lock-dynamo" \
+-backend-config="bucket=helm-eks-tf-ire-remote" \
+-backend-config="dynamodb_table=terraform-state-lock-ire-dynamo" \
 -backend-config="key=tfstate" \
--backend-config="region=us-west-2" \
+-backend-config="region=eu-west-1" \
 -get=true \
 -force-copy
 

@@ -1,5 +1,5 @@
 provider "aws" {
-  region = "us-west-2"
+  region = "eu-west-1"
 }
 # terraform state file setup
 # create an S3 bucket to store the state file in
