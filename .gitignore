@@ -2,4 +2,4 @@
 *.tfstate*
 .terraform
 init.tf
-
+provider.tf
