@@ -60,7 +60,7 @@ variable "key_pair_name" {
 variable "asg_instance_type" {
   description = "Instance type for worker"
   type        = "string"
-  default     = "m5.large"
+  default     = "t2.medium"
 }
 
 variable "root_volume_type" {

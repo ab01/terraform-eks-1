@@ -10,7 +10,8 @@ resource "aws_launch_configuration" "worker_launch_config" {
   name_prefix   = "${var.cluster_name}-${var.worker_name}-lc-"
   instance_type = "${var.asg_instance_type}"
 
-  image_id             = "${data.aws_ami.eks_worker_ami.id}"
+  #image_id             = "${data.aws_ami.eks_worker_ami.id}"
+  image_id             = "ami-01e08d22b9439c15a"
   iam_instance_profile = "${aws_iam_instance_profile.workers.arn}"
 
   user_data = "${data.template_file.user_data.rendered}"
